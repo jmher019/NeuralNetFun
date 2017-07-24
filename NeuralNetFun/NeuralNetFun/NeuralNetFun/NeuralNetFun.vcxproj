@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\Dev\Test\NeuralNetFun\src\include;$(IncludePath)</IncludePath>
+    <SourcePath>D:\Dev\Test\NeuralNetFun\src\sources;$(SourcePath)</SourcePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -111,6 +114,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\include\BitMapGenerator.h" />
+    <ClInclude Include="..\..\..\src\include\ImageData.h" />
+    <ClInclude Include="..\..\..\src\include\MNISTParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\sources\BitMapGenerator.cpp" />
+    <ClCompile Include="..\..\..\src\sources\ImageData.cpp" />
+    <ClCompile Include="..\..\..\src\sources\main.cpp" />
+    <ClCompile Include="..\..\..\src\sources\MNISTParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
