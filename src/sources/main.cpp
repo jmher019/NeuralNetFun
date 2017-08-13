@@ -1,19 +1,20 @@
 /**
-*  @file    main.cpp
-*  @author  Jonathan Hernandez (jmher019)
-*  @date    7/23/2017
-*  @version 0.0
-*
-*  @brief used to run test functions
-*
-*  @section DESCRIPTION
-*
-*  We can use this file to run test programs
-*
-*/
+ *  @file    main.cpp
+ *  @author  Jonathan Hernandez (jmher019)
+ *  @date    7/23/2017
+ *  @version 0.0
+ *
+ *  @brief used to run test functions
+ *
+ *  @section DESCRIPTION
+ *
+ *  We can use this file to run test programs
+ *
+ */
 
 #include "MNISTParser.h"
 #include "BitMapGenerator.h"
+#include "MathUtils.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -77,7 +78,28 @@ void testMnistParser() {
 	cleanup(images);
 }
 
+void testMathUtils() {
+	cout << "Testing randn..." << endl;
+	const uint32_t rows = 100000;
+	const uint32_t cols = 1;
+	const uint32_t length = rows * cols;
+	double* mat = MathUtils::randn(rows, cols);
+
+	ofstream out("D:\\Dev\\Test\\NeuralNetFun\\testData\\test-randn.csv", std::ofstream::out);
+
+	for (uint32_t index = 0; index < length; index++) {
+		out << mat[index] << endl;
+	}
+
+	delete mat;
+	mat = nullptr;
+
+	// TODO: add more tests
+}
+
 int main() {
 	testMnistParser();
+	testMathUtils();
+	system("pause");
 	return 0;
 }

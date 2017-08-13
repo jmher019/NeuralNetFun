@@ -116,12 +116,14 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\src\include\BitMapGenerator.h" />
     <ClInclude Include="..\..\..\src\include\ImageData.h" />
+    <ClInclude Include="..\..\..\src\include\MathUtils.h" />
     <ClInclude Include="..\..\..\src\include\MNISTParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\sources\BitMapGenerator.cpp" />
     <ClCompile Include="..\..\..\src\sources\ImageData.cpp" />
     <ClCompile Include="..\..\..\src\sources\main.cpp" />
+    <ClCompile Include="..\..\..\src\sources\MathUtils.cpp" />
     <ClCompile Include="..\..\..\src\sources\MNISTParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
